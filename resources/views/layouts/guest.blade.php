@@ -14,11 +14,28 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
+
     <body class="font-sans text-gray-900 antialiased">
+
+    <style>
+        .brand-logo {
+            width: 100px;
+            height: 90px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4f46e5, #a855f7, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 800;
+            font-size: 60px;
+        }
+    </style>
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
+
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    <div class="brand-logo">PB</div>
                 </a>
             </div>
 
