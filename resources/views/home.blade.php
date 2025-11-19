@@ -959,3 +959,1271 @@
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{--<!DOCTYPE html>--}}
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+{{--<head>--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
+{{--    <title>Portfolio Builder - Create Your Portfolio</title>--}}
+
+{{--    --}}{{-- Optional: keep JS if you need it --}}
+{{--    @vite(['resources/js/app.js'])--}}
+
+{{--    <style>--}}
+{{--        :root {--}}
+{{--            --primary: #6366f1;--}}
+{{--            --primary-soft: rgba(99,102,241,0.12);--}}
+{{--            --primary-dark: #4f46e5;--}}
+{{--            --accent: #22d3ee;--}}
+{{--            --bg-deep: #020617;--}}
+{{--            --bg-soft: #020617;--}}
+{{--            --card-bg: rgba(15,23,42,0.9);--}}
+{{--            --card-border: rgba(148,163,184,0.45);--}}
+{{--            --text-main: #e5e7eb;--}}
+{{--            --text-muted: #9ca3af;--}}
+{{--            --radius-lg: 20px;--}}
+{{--            --shadow-strong: 0 26px 60px rgba(15,23,42,0.9);--}}
+{{--        }--}}
+
+{{--        * {--}}
+{{--            box-sizing: border-box;--}}
+{{--        }--}}
+
+{{--        body {--}}
+{{--            margin: 0;--}}
+{{--            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;--}}
+{{--            background:--}}
+{{--                radial-gradient(circle at top left, rgba(56,189,248,0.15), transparent 55%),--}}
+{{--                radial-gradient(circle at top right, rgba(129,140,248,0.16), transparent 55%),--}}
+{{--                radial-gradient(circle at bottom, rgba(236,72,153,0.18), transparent 55%),--}}
+{{--                var(--bg-deep);--}}
+{{--            color: var(--text-main);--}}
+{{--        }--}}
+
+{{--        a {--}}
+{{--            text-decoration: none;--}}
+{{--            color: inherit;--}}
+{{--        }--}}
+
+{{--        .page {--}}
+{{--            min-height: 100vh;--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--        }--}}
+
+{{--        /* NAVBAR */--}}
+{{--        .navbar {--}}
+{{--            position: sticky;--}}
+{{--            top: 0;--}}
+{{--            z-index: 50;--}}
+{{--            border-bottom: 1px solid rgba(148,163,184,0.25);--}}
+{{--            background: linear-gradient(to bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.8));--}}
+{{--            backdrop-filter: blur(14px);--}}
+{{--        }--}}
+
+{{--        .navbar-inner {--}}
+{{--            max-width: 1160px;--}}
+{{--            margin: 0 auto;--}}
+{{--            padding: 10px 16px;--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: space-between;--}}
+{{--        }--}}
+
+{{--        .brand {--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            gap: 12px;--}}
+{{--        }--}}
+
+{{--        .brand-orb {--}}
+{{--            width: 38px;--}}
+{{--            height: 38px;--}}
+{{--            border-radius: 999px;--}}
+{{--            background:--}}
+{{--                conic-gradient(from 180deg, #22d3ee, #6366f1, #a855f7, #ec4899, #22d3ee);--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--            box-shadow: 0 0 22px rgba(56,189,248,0.8);--}}
+{{--        }--}}
+
+{{--        .brand-orb-inner {--}}
+{{--            width: 28px;--}}
+{{--            height: 28px;--}}
+{{--            border-radius: inherit;--}}
+{{--            background: radial-gradient(circle at 30% 20%, #e5e7eb, #020617);--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--            color: #e5e7eb;--}}
+{{--            font-size: 14px;--}}
+{{--            font-weight: 800;--}}
+{{--        }--}}
+
+{{--        .brand-text-main {--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--        }--}}
+
+{{--        .brand-title {--}}
+{{--            font-size: 18px;--}}
+{{--            font-weight: 700;--}}
+{{--            letter-spacing: 0.02em;--}}
+{{--        }--}}
+
+{{--        .brand-sub {--}}
+{{--            font-size: 11px;--}}
+{{--            color: var(--text-muted);--}}
+{{--        }--}}
+
+{{--        .nav-links {--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            gap: 18px;--}}
+{{--            font-size: 13px;--}}
+{{--        }--}}
+
+{{--        .nav-link {--}}
+{{--            color: var(--text-muted);--}}
+{{--            padding: 6px 0;--}}
+{{--        }--}}
+
+{{--        .nav-link:hover {--}}
+{{--            color: #e5e7eb;--}}
+{{--        }--}}
+
+{{--        .btn-pill {--}}
+{{--            padding: 8px 16px;--}}
+{{--            border-radius: 999px;--}}
+{{--            font-size: 13px;--}}
+{{--            border: 1px solid transparent;--}}
+{{--            cursor: pointer;--}}
+{{--            display: inline-flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--            gap: 6px;--}}
+{{--            font-weight: 500;--}}
+{{--            white-space: nowrap;--}}
+{{--        }--}}
+
+{{--        .btn-outline {--}}
+{{--            border-color: rgba(148,163,184,0.6);--}}
+{{--            background: rgba(15,23,42,0.8);--}}
+{{--            color: #e5e7eb;--}}
+{{--        }--}}
+
+{{--        .btn-outline:hover {--}}
+{{--            background: rgba(15,23,42,1);--}}
+{{--        }--}}
+
+{{--        .btn-primary {--}}
+{{--            background: linear-gradient(135deg, #6366f1, #22d3ee);--}}
+{{--            color: #0f172a;--}}
+{{--            box-shadow: 0 14px 40px rgba(59,130,246,0.65);--}}
+{{--        }--}}
+
+{{--        .btn-primary:hover {--}}
+{{--            background: linear-gradient(135deg, #4f46e5, #06b6d4);--}}
+{{--        }--}}
+
+{{--        /* HERO */--}}
+{{--        .hero {--}}
+{{--            padding: 42px 16px 40px;--}}
+{{--        }--}}
+
+{{--        .hero-inner {--}}
+{{--            max-width: 1160px;--}}
+{{--            margin: 0 auto;--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);--}}
+{{--            gap: 42px;--}}
+{{--            align-items: center;--}}
+{{--        }--}}
+
+{{--        @media (max-width: 960px) {--}}
+{{--            .hero-inner {--}}
+{{--                grid-template-columns: minmax(0, 1fr);--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .hero-kicker {--}}
+{{--            display: inline-flex;--}}
+{{--            padding: 4px 10px;--}}
+{{--            border-radius: 999px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.45);--}}
+{{--            background: rgba(15,23,42,0.85);--}}
+{{--            font-size: 11px;--}}
+{{--            color: #cbd5f5;--}}
+{{--            gap: 8px;--}}
+{{--            margin-bottom: 10px;--}}
+{{--        }--}}
+
+{{--        .hero-kicker span:nth-child(1) {--}}
+{{--            color: #22d3ee;--}}
+{{--        }--}}
+
+{{--        .hero-title {--}}
+{{--            font-size: clamp(28px, 4vw, 38px);--}}
+{{--            line-height: 1.1;--}}
+{{--            font-weight: 800;--}}
+{{--            letter-spacing: 0.01em;--}}
+{{--            margin-bottom: 10px;--}}
+{{--        }--}}
+
+{{--        .hero-title span.gradient {--}}
+{{--            background: linear-gradient(120deg, #22d3ee, #a855f7, #6366f1);--}}
+{{--            -webkit-background-clip: text;--}}
+{{--            color: transparent;--}}
+{{--        }--}}
+
+{{--        .hero-sub {--}}
+{{--            font-size: 14px;--}}
+{{--            color: var(--text-muted);--}}
+{{--            max-width: 480px;--}}
+{{--            margin-bottom: 18px;--}}
+{{--        }--}}
+
+{{--        .hero-sub strong {--}}
+{{--            color: #e5e7eb;--}}
+{{--        }--}}
+
+{{--        .hero-actions {--}}
+{{--            display: flex;--}}
+{{--            flex-wrap: wrap;--}}
+{{--            gap: 10px;--}}
+{{--            margin-bottom: 14px;--}}
+{{--        }--}}
+
+{{--        .hero-note {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #9ca3af;--}}
+{{--        }--}}
+
+{{--        .hero-steps-row {--}}
+{{--            display: flex;--}}
+{{--            flex-wrap: wrap;--}}
+{{--            gap: 12px;--}}
+{{--            margin-top: 16px;--}}
+{{--        }--}}
+
+{{--        .hero-step-chip {--}}
+{{--            display: inline-flex;--}}
+{{--            align-items: center;--}}
+{{--            gap: 8px;--}}
+{{--            padding: 6px 10px;--}}
+{{--            border-radius: 999px;--}}
+{{--            background: rgba(15,23,42,0.85);--}}
+{{--            border: 1px solid rgba(148,163,184,0.5);--}}
+{{--            font-size: 11px;--}}
+{{--        }--}}
+
+{{--        .hero-step-number {--}}
+{{--            width: 18px;--}}
+{{--            height: 18px;--}}
+{{--            border-radius: 999px;--}}
+{{--            background: rgba(37,99,235,0.35);--}}
+{{--            border: 1px solid rgba(129,140,248,0.7);--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--            font-size: 10px;--}}
+{{--            color: #e5e7eb;--}}
+{{--        }--}}
+
+{{--        /* HERO RIGHT – GLASS PANEL */--}}
+{{--        .hero-panel-wrap {--}}
+{{--            position: relative;--}}
+{{--        }--}}
+
+{{--        .hero-orb-bg {--}}
+{{--            position: absolute;--}}
+{{--            inset: -40px -60px;--}}
+{{--            pointer-events: none;--}}
+{{--            opacity: 0.35;--}}
+{{--            background:--}}
+{{--                radial-gradient(circle at 20% 0%, rgba(56,189,248,0.6), transparent 60%),--}}
+{{--                radial-gradient(circle at 100% 30%, rgba(129,140,248,0.55), transparent 60%),--}}
+{{--                radial-gradient(circle at 0% 80%, rgba(248,113,113,0.45), transparent 55%);--}}
+{{--            filter: blur(2px);--}}
+{{--        }--}}
+
+{{--        .hero-panel {--}}
+{{--            position: relative;--}}
+{{--            background: radial-gradient(circle at top left, rgba(15,23,42,0.96), rgba(15,23,42,0.96));--}}
+{{--            border-radius: 26px;--}}
+{{--            padding: 16px 16px 18px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.55);--}}
+{{--            box-shadow: var(--shadow-strong);--}}
+{{--            overflow: hidden;--}}
+{{--        }--}}
+
+{{--        .hero-panel-topbar {--}}
+{{--            display: flex;--}}
+{{--            justify-content: space-between;--}}
+{{--            align-items: center;--}}
+{{--            margin-bottom: 10px;--}}
+{{--        }--}}
+
+{{--        .panel-dots {--}}
+{{--            display: flex;--}}
+{{--            gap: 6px;--}}
+{{--        }--}}
+
+{{--        .panel-dot {--}}
+{{--            width: 8px;--}}
+{{--            height: 8px;--}}
+{{--            border-radius: 999px;--}}
+{{--        }--}}
+{{--        .panel-dot.red { background:#f97373; }--}}
+{{--        .panel-dot.amber { background:#fbbf24; }--}}
+{{--        .panel-dot.green { background:#22c55e; }--}}
+
+{{--        .panel-label {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #9ca3af;--}}
+{{--        }--}}
+
+{{--        .panel-main {--}}
+{{--            border-radius: 17px;--}}
+{{--            overflow: hidden;--}}
+{{--            background: radial-gradient(circle at top left, #6366f1, #0f172a);--}}
+{{--            height: 150px;--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: 1.3fr 1fr;--}}
+{{--        }--}}
+
+{{--        @media (max-width: 400px) {--}}
+{{--            .panel-main {--}}
+{{--                grid-template-columns: minmax(0, 1fr);--}}
+{{--                height: auto;--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .panel-main-left {--}}
+{{--            padding: 14px 15px;--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            justify-content: center;--}}
+{{--            gap: 6px;--}}
+{{--        }--}}
+
+{{--        .panel-main-title {--}}
+{{--            font-size: 15px;--}}
+{{--            font-weight: 600;--}}
+{{--        }--}}
+
+{{--        .panel-main-sub {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #e5e7eb;--}}
+{{--        }--}}
+
+{{--        .panel-tagline {--}}
+{{--            font-size: 10px;--}}
+{{--            color: #c4b5fd;--}}
+{{--        }--}}
+
+{{--        .panel-main-right {--}}
+{{--            padding: 12px 12px;--}}
+{{--            background:--}}
+{{--                radial-gradient(circle at 30% 0%, rgba(244,244,245,0.7), transparent 55%),--}}
+{{--                radial-gradient(circle at 80% 80%, rgba(59,130,246,0.7), transparent 60%);--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--        }--}}
+
+{{--        .panel-avatar-ring {--}}
+{{--            width: 62px;--}}
+{{--            height: 62px;--}}
+{{--            border-radius: 999px;--}}
+{{--            padding: 3px;--}}
+{{--            background: conic-gradient(#22d3ee, #6366f1, #a855f7, #22d3ee);--}}
+{{--            display:flex;--}}
+{{--            align-items:center;--}}
+{{--            justify-content:center;--}}
+{{--        }--}}
+
+{{--        .panel-avatar {--}}
+{{--            width: 100%;--}}
+{{--            height: 100%;--}}
+{{--            border-radius: inherit;--}}
+{{--            background: radial-gradient(circle at 30% 20%, #e5e7eb, #111827);--}}
+{{--        }--}}
+
+{{--        .panel-body {--}}
+{{--            padding: 10px 4px 0;--}}
+{{--        }--}}
+
+{{--        .panel-user-row {--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            gap: 10px;--}}
+{{--            margin-bottom: 6px;--}}
+{{--        }--}}
+
+{{--        .panel-user-info-name {--}}
+{{--            font-size: 13px;--}}
+{{--            font-weight: 600;--}}
+{{--        }--}}
+
+{{--        .panel-user-info-role {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #9ca3af;--}}
+{{--        }--}}
+
+{{--        .panel-text {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #9ca3af;--}}
+{{--        }--}}
+
+{{--        .panel-chips {--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: repeat(3, minmax(0, 1fr));--}}
+{{--            gap: 8px;--}}
+{{--            margin-top: 10px;--}}
+{{--        }--}}
+
+{{--        .panel-chip {--}}
+{{--            border-radius: 999px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.55);--}}
+{{--            background: rgba(15,23,42,0.95);--}}
+{{--            padding: 6px 8px;--}}
+{{--            font-size: 10px;--}}
+{{--            color: #e5e7eb;--}}
+{{--            text-align: center;--}}
+{{--            line-height: 1.3;--}}
+{{--        }--}}
+
+{{--        .panel-chip span {--}}
+{{--            display: block;--}}
+{{--            font-size: 9px;--}}
+{{--            color: #9ca3af;--}}
+{{--        }--}}
+
+{{--        /* SECTIONS */--}}
+{{--        .section {--}}
+{{--            padding: 36px 16px;--}}
+{{--        }--}}
+
+{{--        .section-inner {--}}
+{{--            max-width: 1160px;--}}
+{{--            margin: 0 auto;--}}
+{{--        }--}}
+
+{{--        .section-header {--}}
+{{--            text-align: center;--}}
+{{--            margin-bottom: 26px;--}}
+{{--        }--}}
+
+{{--        .section-title {--}}
+{{--            font-size: 22px;--}}
+{{--            font-weight: 700;--}}
+{{--            letter-spacing: 0.02em;--}}
+{{--        }--}}
+
+{{--        .section-title span {--}}
+{{--            background: linear-gradient(120deg, #22d3ee, #6366f1);--}}
+{{--            -webkit-background-clip: text;--}}
+{{--            color: transparent;--}}
+{{--        }--}}
+
+{{--        .section-sub {--}}
+{{--            font-size: 13px;--}}
+{{--            color: var(--text-muted);--}}
+{{--            max-width: 520px;--}}
+{{--            margin: 6px auto 0;--}}
+{{--        }--}}
+
+{{--        /* HOW IT WORKS */--}}
+{{--        .hiw-grid {--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: repeat(3, minmax(0, 1fr));--}}
+{{--            gap: 18px;--}}
+{{--        }--}}
+
+{{--        @media (max-width: 840px) {--}}
+{{--            .hiw-grid {--}}
+{{--                grid-template-columns: minmax(0, 1fr);--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .hiw-card {--}}
+{{--            border-radius: var(--radius-lg);--}}
+{{--            border: 1px solid rgba(148,163,184,0.5);--}}
+{{--            background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.96));--}}
+{{--            padding: 16px 16px 14px;--}}
+{{--            box-shadow: 0 16px 40px rgba(15,23,42,0.6);--}}
+{{--            position: relative;--}}
+{{--            overflow: hidden;--}}
+{{--        }--}}
+
+{{--        .hiw-card::before {--}}
+{{--            content: "";--}}
+{{--            position: absolute;--}}
+{{--            inset: -30%;--}}
+{{--            opacity: 0;--}}
+{{--            background: radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 55%);--}}
+{{--            transition: opacity 0.25s ease;--}}
+{{--        }--}}
+
+{{--        .hiw-card:hover::before {--}}
+{{--            opacity: 1;--}}
+{{--        }--}}
+
+{{--        .hiw-number {--}}
+{{--            width: 26px;--}}
+{{--            height: 26px;--}}
+{{--            border-radius: 999px;--}}
+{{--            border: 1px solid rgba(129,140,248,0.8);--}}
+{{--            background: rgba(15,23,42,0.9);--}}
+{{--            display: flex;--}}
+{{--            align-items: center;--}}
+{{--            justify-content: center;--}}
+{{--            font-size: 12px;--}}
+{{--            color: #c7d2fe;--}}
+{{--            margin-bottom: 8px;--}}
+{{--        }--}}
+
+{{--        .hiw-title {--}}
+{{--            font-size: 14px;--}}
+{{--            font-weight: 600;--}}
+{{--            margin-bottom: 6px;--}}
+{{--        }--}}
+
+{{--        .hiw-text {--}}
+{{--            font-size: 12px;--}}
+{{--            color: var(--text-muted);--}}
+{{--        }--}}
+
+{{--        .hiw-footnote {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #64748b;--}}
+{{--            margin-top: 8px;--}}
+{{--        }--}}
+
+{{--        /* THEMES – ONLY IF DATA */--}}
+{{--        .themes-shell {--}}
+{{--            border-radius: 28px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.55);--}}
+{{--            background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.95));--}}
+{{--            padding: 18px 18px 20px;--}}
+{{--            box-shadow: 0 26px 60px rgba(15,23,42,0.9);--}}
+{{--            position: relative;--}}
+{{--            overflow: hidden;--}}
+{{--        }--}}
+
+{{--        .themes-shell::before {--}}
+{{--            content: "";--}}
+{{--            position: absolute;--}}
+{{--            inset: -40%;--}}
+{{--            pointer-events: none;--}}
+{{--            opacity: 0.4;--}}
+{{--            background:--}}
+{{--                radial-gradient(circle at 0% 0%, rgba(56,189,248,0.4), transparent 60%),--}}
+{{--                radial-gradient(circle at 100% 50%, rgba(129,140,248,0.4), transparent 60%);--}}
+{{--            mix-blend-mode: screen;--}}
+{{--        }--}}
+
+{{--        .themes-header-row {--}}
+{{--            position: relative;--}}
+{{--            z-index: 1;--}}
+{{--            display: flex;--}}
+{{--            flex-wrap: wrap;--}}
+{{--            justify-content: space-between;--}}
+{{--            align-items: flex-end;--}}
+{{--            gap: 10px;--}}
+{{--            margin-bottom: 18px;--}}
+{{--        }--}}
+
+{{--        .themes-title-block {--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            gap: 4px;--}}
+{{--        }--}}
+
+{{--        .themes-title {--}}
+{{--            font-size: 18px;--}}
+{{--            font-weight: 600;--}}
+{{--        }--}}
+
+{{--        .themes-sub {--}}
+{{--            font-size: 12px;--}}
+{{--            color: #9ca3af;--}}
+{{--        }--}}
+
+{{--        .themes-tagline {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #a5b4fc;--}}
+{{--        }--}}
+
+{{--        .themes-note {--}}
+{{--            font-size: 11px;--}}
+{{--            color: #9ca3af;--}}
+{{--            text-align: right;--}}
+{{--        }--}}
+
+{{--        .themes-grid {--}}
+{{--            position: relative;--}}
+{{--            z-index: 1;--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: repeat(3, minmax(0, 1fr));--}}
+{{--            gap: 18px;--}}
+{{--        }--}}
+
+{{--        @media (max-width: 1000px) {--}}
+{{--            .themes-grid {--}}
+{{--                grid-template-columns: repeat(2, minmax(0, 1fr));--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        @media (max-width: 640px) {--}}
+{{--            .themes-grid {--}}
+{{--                grid-template-columns: minmax(0, 1fr);--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .theme-card {--}}
+{{--            background: rgba(15,23,42,0.92);--}}
+{{--            border-radius: 20px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.6);--}}
+{{--            overflow: hidden;--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            box-shadow: 0 16px 45px rgba(15,23,42,0.7);--}}
+{{--            transform: translateY(0);--}}
+{{--            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;--}}
+{{--        }--}}
+
+{{--        .theme-card:hover {--}}
+{{--            transform: translateY(-5px);--}}
+{{--            box-shadow: 0 24px 70px rgba(15,23,42,0.95);--}}
+{{--            border-color: rgba(129,140,248,0.9);--}}
+{{--        }--}}
+
+{{--        .theme-thumb {--}}
+{{--            position: relative;--}}
+{{--            height: 200px;--}}
+{{--            background: #020617;--}}
+{{--            overflow: hidden;--}}
+{{--        }--}}
+
+{{--        .theme-thumb img {--}}
+{{--            width: 100%;--}}
+{{--            height: 100%;--}}
+{{--            object-fit: cover;--}}
+{{--            display: block;--}}
+{{--            transform: scale(1.03);--}}
+{{--            transition: transform 0.4s ease;--}}
+{{--        }--}}
+
+{{--        .theme-card:hover .theme-thumb img {--}}
+{{--            transform: scale(1.1);--}}
+{{--        }--}}
+
+{{--        .theme-overlay-bar {--}}
+{{--            position: absolute;--}}
+{{--            left: 10px;--}}
+{{--            right: 10px;--}}
+{{--            bottom: 10px;--}}
+{{--            display: flex;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 8px;--}}
+{{--            font-size: 10px;--}}
+{{--        }--}}
+
+{{--        .theme-pill {--}}
+{{--            padding: 4px 8px;--}}
+{{--            border-radius: 999px;--}}
+{{--            background: rgba(15,23,42,0.85);--}}
+{{--            backdrop-filter: blur(6px);--}}
+{{--            border: 1px solid rgba(148,163,184,0.9);--}}
+{{--            color: #e5e7eb;--}}
+{{--            white-space: nowrap;--}}
+{{--        }--}}
+
+{{--        .theme-pill-highlight {--}}
+{{--            background: linear-gradient(135deg, #22c55e, #4ade80);--}}
+{{--            color: #052e16;--}}
+{{--            border: none;--}}
+{{--        }--}}
+
+{{--        .theme-body {--}}
+{{--            padding: 12px 13px 13px;--}}
+{{--            display: flex;--}}
+{{--            flex-direction: column;--}}
+{{--            gap: 6px;--}}
+{{--        }--}}
+
+{{--        .theme-name-row {--}}
+{{--            display: flex;--}}
+{{--            justify-content: space-between;--}}
+{{--            align-items: baseline;--}}
+{{--            gap: 6px;--}}
+{{--        }--}}
+
+{{--        .theme-name {--}}
+{{--            font-size: 14px;--}}
+{{--            font-weight: 600;--}}
+{{--        }--}}
+
+{{--        .theme-tag {--}}
+{{--            font-size: 10px;--}}
+{{--            color: #a5b4fc;--}}
+{{--            text-transform: uppercase;--}}
+{{--            letter-spacing: 0.08em;--}}
+{{--        }--}}
+
+{{--        .theme-desc {--}}
+{{--            font-size: 12px;--}}
+{{--            color: var(--text-muted);--}}
+{{--            min-height: 34px;--}}
+{{--        }--}}
+
+{{--        .theme-actions {--}}
+{{--            display: flex;--}}
+{{--            gap: 8px;--}}
+{{--            margin-top: 6px;--}}
+{{--        }--}}
+
+{{--        .btn-tiny {--}}
+{{--            padding: 7px 0;--}}
+{{--            border-radius: 999px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.7);--}}
+{{--            background: rgba(15,23,42,0.96);--}}
+{{--            color: #e5e7eb;--}}
+{{--            font-size: 11px;--}}
+{{--            cursor: pointer;--}}
+{{--            flex: 1;--}}
+{{--            text-align: center;--}}
+{{--        }--}}
+
+{{--        .btn-tiny:hover {--}}
+{{--            background: rgba(15,23,42,1);--}}
+{{--        }--}}
+
+{{--        .btn-tiny-primary {--}}
+{{--            border-color: transparent;--}}
+{{--            background: linear-gradient(135deg, #6366f1, #22d3ee);--}}
+{{--            color: #020617;--}}
+{{--            font-weight: 500;--}}
+{{--        }--}}
+
+{{--        .btn-tiny-primary:hover {--}}
+{{--            background: linear-gradient(135deg, #4f46e5, #06b6d4);--}}
+{{--        }--}}
+
+{{--        /* ABOUT */--}}
+{{--        .about-grid {--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);--}}
+{{--            gap: 24px;--}}
+{{--            align-items: flex-start;--}}
+{{--        }--}}
+
+{{--        @media (max-width: 960px) {--}}
+{{--            .about-grid {--}}
+{{--                grid-template-columns: minmax(0, 1fr);--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .about-text p {--}}
+{{--            font-size: 13px;--}}
+{{--            color: var(--text-muted);--}}
+{{--            margin-bottom: 8px;--}}
+{{--        }--}}
+
+{{--        .about-text strong {--}}
+{{--            color: #e5e7eb;--}}
+{{--        }--}}
+
+{{--        .about-chips {--}}
+{{--            display: flex;--}}
+{{--            flex-wrap: wrap;--}}
+{{--            gap: 8px;--}}
+{{--            margin-top: 10px;--}}
+{{--        }--}}
+
+{{--        .about-chip {--}}
+{{--            font-size: 11px;--}}
+{{--            padding: 5px 9px;--}}
+{{--            border-radius: 999px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.6);--}}
+{{--            background: rgba(15,23,42,0.9);--}}
+{{--            color: #cbd5f5;--}}
+{{--        }--}}
+
+{{--        .about-highlights {--}}
+{{--            display: grid;--}}
+{{--            grid-template-columns: repeat(3, minmax(0, 1fr));--}}
+{{--            gap: 10px;--}}
+{{--            margin-top: 12px;--}}
+{{--        }--}}
+
+{{--        @media (max-width: 640px) {--}}
+{{--            .about-highlights {--}}
+{{--                grid-template-columns: minmax(0, 1fr);--}}
+{{--            }--}}
+{{--        }--}}
+
+{{--        .about-card {--}}
+{{--            border-radius: 14px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.5);--}}
+{{--            background: rgba(15,23,42,0.95);--}}
+{{--            padding: 10px 12px;--}}
+{{--        }--}}
+
+{{--        .about-card-title {--}}
+{{--            font-size: 12px;--}}
+{{--            font-weight: 600;--}}
+{{--            margin-bottom: 4px;--}}
+{{--        }--}}
+
+{{--        .about-card-text {--}}
+{{--            font-size: 11px;--}}
+{{--            color: var(--text-muted);--}}
+{{--        }--}}
+
+{{--        .about-side {--}}
+{{--            border-radius: 20px;--}}
+{{--            border: 1px solid rgba(148,163,184,0.6);--}}
+{{--            background: radial-gradient(circle at top left, rgba(15,23,42,0.98), rgba(15,23,42,0.96));--}}
+{{--            padding: 14px 14px 16px;--}}
+{{--            box-shadow: 0 20px 55px rgba(15,23,42,0.85);--}}
+{{--        }--}}
+
+{{--        .about-side-title {--}}
+{{--            font-size: 14px;--}}
+{{--            font-weight: 600;--}}
+{{--            margin-bottom: 8px;--}}
+{{--        }--}}
+
+{{--        .about-list {--}}
+{{--            list-style: none;--}}
+{{--            padding: 0;--}}
+{{--            margin: 0 0 12px;--}}
+{{--        }--}}
+
+{{--        .about-list li {--}}
+{{--            display: flex;--}}
+{{--            gap: 8px;--}}
+{{--            font-size: 12px;--}}
+{{--            color: var(--text-muted);--}}
+{{--            margin-bottom: 6px;--}}
+{{--        }--}}
+
+{{--        .about-dot {--}}
+{{--            width: 5px;--}}
+{{--            height: 5px;--}}
+{{--            border-radius: 999px;--}}
+{{--            background: #6366f1;--}}
+{{--            margin-top: 6px;--}}
+{{--        }--}}
+
+{{--        /* FOOTER */--}}
+{{--        .footer {--}}
+{{--            border-top: 1px solid rgba(148,163,184,0.35);--}}
+{{--            background: rgba(15,23,42,0.98);--}}
+{{--            padding: 12px 16px;--}}
+{{--            font-size: 11px;--}}
+{{--            color: var(--text-muted);--}}
+{{--        }--}}
+
+{{--        .footer-inner {--}}
+{{--            max-width: 1160px;--}}
+{{--            margin: 0 auto;--}}
+{{--            display: flex;--}}
+{{--            flex-wrap: wrap;--}}
+{{--            justify-content: space-between;--}}
+{{--            gap: 8px;--}}
+{{--        }--}}
+{{--    </style>--}}
+{{--</head>--}}
+{{--<body>--}}
+{{--<div class="page">--}}
+{{--    <!-- NAVBAR -->--}}
+{{--    <header class="navbar">--}}
+{{--        <div class="navbar-inner">--}}
+{{--            <div class="brand">--}}
+{{--                <div class="brand-orb">--}}
+{{--                    <div class="brand-orb-inner">PB</div>--}}
+{{--                </div>--}}
+{{--                <div class="brand-text-main">--}}
+{{--                    <span class="brand-title">Portfolio Builder</span>--}}
+{{--                    <span class="brand-sub">Free portfolio • PDF ready</span>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <nav class="nav-links">--}}
+{{--                <a href="#how-it-works" class="nav-link">How it works</a>--}}
+{{--                <a href="#themes" class="nav-link">Themes</a>--}}
+{{--                <a href="#about" class="nav-link">About</a>--}}
+
+{{--                @auth--}}
+{{--                    <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>--}}
+{{--                    @if(auth()->user()->is_admin)--}}
+{{--                        <a href="{{ route('admin.dashboard') }}" class="nav-link">Admin</a>--}}
+{{--                    @endif--}}
+{{--                    <form method="POST" action="{{ route('logout') }}">--}}
+{{--                        @csrf--}}
+{{--                        <button type="submit" class="btn-pill btn-outline">Logout</button>--}}
+{{--                    </form>--}}
+{{--                @else--}}
+{{--                    <a href="{{ route('login') }}" class="nav-link">Login</a>--}}
+{{--                    <a href="{{ route('register') }}" class="btn-pill btn-primary">Sign up free</a>--}}
+{{--                @endauth--}}
+{{--            </nav>--}}
+{{--        </div>--}}
+{{--    </header>--}}
+
+{{--    <!-- HERO -->--}}
+{{--    <section class="hero">--}}
+{{--        <div class="hero-inner">--}}
+{{--            <div>--}}
+{{--                <div class="hero-kicker">--}}
+{{--                    <span>New</span>--}}
+{{--                    <span>•</span>--}}
+{{--                    <span>Build portfolio in minutes</span>--}}
+{{--                    <span>•</span>--}}
+{{--                    <span>Export as PDF</span>--}}
+{{--                </div>--}}
+
+{{--                <h1 class="hero-title">--}}
+{{--                    Create a <span class="gradient">professional portfolio</span><br>--}}
+{{--                    without touching any code.--}}
+{{--                </h1>--}}
+
+{{--                <p class="hero-sub">--}}
+{{--                    Hum user ko <strong>bilkul free</strong> portfolio website banā kar dete hain –--}}
+{{--                    bas apni marzi ka template choose karo, login karo aur apna data daalo.--}}
+{{--                    Agar chaho to apni site ko <strong>clean PDF</strong> me export karke HR ya clients ko bhej sakte ho.--}}
+{{--                </p>--}}
+
+{{--                <div class="hero-actions">--}}
+{{--                    <a href="#themes" class="btn-pill btn-primary">--}}
+{{--                        Choose your theme--}}
+{{--                    </a>--}}
+{{--                    @guest--}}
+{{--                        <a href="{{ route('register') }}" class="btn-pill btn-outline">--}}
+{{--                            Create free account--}}
+{{--                        </a>--}}
+{{--                    @endguest>--}}
+{{--                </div>--}}
+{{--                <div class="hero-note">--}}
+{{--                    No payment, no ads inside your portfolio – sirf clean professional look.--}}
+{{--                </div>--}}
+
+{{--                <div class="hero-steps-row">--}}
+{{--                    <div class="hero-step-chip">--}}
+{{--                        <div class="hero-step-number">1</div>--}}
+{{--                        <span>Theme select karo</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="hero-step-chip">--}}
+{{--                        <div class="hero-step-number">2</div>--}}
+{{--                        <span>Login + apna data fill karo</span>--}}
+{{--                    </div>--}}
+{{--                    <div class="hero-step-chip">--}}
+{{--                        <div class="hero-step-number">3</div>--}}
+{{--                        <span>Live portfolio &amp; PDF export</span>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <div class="hero-panel-wrap">--}}
+{{--                <div class="hero-orb-bg"></div>--}}
+
+{{--                <div class="hero-panel">--}}
+{{--                    <div class="hero-panel-topbar">--}}
+{{--                        <div class="panel-dots">--}}
+{{--                            <div class="panel-dot red"></div>--}}
+{{--                            <div class="panel-dot amber"></div>--}}
+{{--                            <div class="panel-dot green"></div>--}}
+{{--                        </div>--}}
+{{--                        <div class="panel-label">Portfolio preview</div>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="panel-main">--}}
+{{--                        <div class="panel-main-left">--}}
+{{--                            <div class="panel-main-title">Your Name</div>--}}
+{{--                            <div class="panel-main-sub">Web Developer • Designer • Creator</div>--}}
+{{--                            <div class="panel-tagline">--}}
+{{--                                One link + one PDF – sab jagah same clean impression.--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="panel-main-right">--}}
+{{--                            <div class="panel-avatar-ring">--}}
+{{--                                <div class="panel-avatar"></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="panel-body">--}}
+{{--                        <div class="panel-user-row">--}}
+{{--                            <div style="width:28px;height:28px;border-radius:999px;background:#020617;border:1px solid rgba(148,163,184,0.6);"></div>--}}
+{{--                            <div>--}}
+{{--                                <div class="panel-user-info-name">Your Name</div>--}}
+{{--                                <div class="panel-user-info-role">Full-Stack Developer</div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <p class="panel-text">--}}
+{{--                            “Ek baar data fill karo – portfolio site + PDF dono ham sambhalte hain.--}}
+{{--                            Aap sirf link share karo aur job / clients handle karo.”--}}
+{{--                        </p>--}}
+
+{{--                        <div class="panel-chips">--}}
+{{--                            <div class="panel-chip">--}}
+{{--                                No coding--}}
+{{--                                <span>Sirf form fill karo</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="panel-chip">--}}
+{{--                                Modern designs--}}
+{{--                                <span>Templates change anytime</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="panel-chip">--}}
+{{--                                PDF export--}}
+{{--                                <span>Perfect for HR & email</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+{{--    <!-- HOW IT WORKS -->--}}
+{{--    <section id="how-it-works" class="section">--}}
+{{--        <div class="section-inner">--}}
+{{--            <div class="section-header">--}}
+{{--                <h2 class="section-title">How it <span>works</span></h2>--}}
+{{--                <p class="section-sub">--}}
+{{--                    3-step process – student ho, fresher ho ya freelancer, koi bhi apna portfolio khud bana sakta hai.--}}
+{{--                </p>--}}
+{{--            </div>--}}
+
+{{--            <div class="hiw-grid">--}}
+{{--                <div class="hiw-card">--}}
+{{--                    <div class="hiw-number">1</div>--}}
+{{--                    <div class="hiw-title">Pick a template you like</div>--}}
+{{--                    <div class="hiw-text">--}}
+{{--                        Ready-made portfolio templates – minimal, creative, classic.--}}
+{{--                        Jo style aapke vibe ke saath match kare, bas woh choose karo.--}}
+{{--                    </div>--}}
+{{--                    <div class="hiw-footnote">--}}
+{{--                        Template baad me bhi change ho sakta hai.--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="hiw-card">--}}
+{{--                    <div class="hiw-number">2</div>--}}
+{{--                    <div class="hiw-title">Login & fill your details</div>--}}
+{{--                    <div class="hiw-text">--}}
+{{--                        Simple forms – name, about, skills, projects, links.--}}
+{{--                        Koi complex dashboard nahi, bas straight-forward fields.--}}
+{{--                    </div>--}}
+{{--                    <div class="hiw-footnote">--}}
+{{--                        Kabhi bhi login karke update kar sakte ho.--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="hiw-card">--}}
+{{--                    <div class="hiw-number">3</div>--}}
+{{--                    <div class="hiw-title">Publish site & export as PDF</div>--}}
+{{--                    <div class="hiw-text">--}}
+{{--                        Live portfolio URL + ek neat PDF version milta hai, jo CV ke saath attach karne ke liye perfect hai.--}}
+{{--                    </div>--}}
+{{--                    <div class="hiw-footnote">--}}
+{{--                        One click PDF export – hamesha latest version.--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+{{--    <!-- THEMES (ONLY IF THERE IS DATA) -->--}}
+{{--    @if(isset($themes) && $themes->count())--}}
+{{--        <section id="themes" class="section">--}}
+{{--            <div class="section-inner">--}}
+{{--                <div class="themes-shell">--}}
+{{--                    <div class="themes-header-row">--}}
+{{--                        <div class="themes-title-block">--}}
+{{--                            <div class="themes-title">Choose your theme</div>--}}
+{{--                            <div class="themes-sub">--}}
+{{--                                Sab templates responsive, polished aur PDF-friendly design ke saath aate hain.--}}
+{{--                            </div>--}}
+{{--                            <div class="themes-tagline">--}}
+{{--                                Ek click me preview, ek click me select.--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="themes-note">--}}
+{{--                            100% free • Unlimited edits • Theme switch anytime--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="themes-grid">--}}
+{{--                        @foreach($themes as $theme)--}}
+{{--                            @php--}}
+{{--                                $preview = $theme->preview_image;--}}
+{{--                                if ($preview) {--}}
+{{--                                    $isUrl = filter_var($preview, FILTER_VALIDATE_URL);--}}
+{{--                                    $previewUrl = $isUrl ? $preview : asset('storage/' . $preview);--}}
+{{--                                } else {--}}
+{{--                                    $previewUrl = 'https://colorlib.com/wp/wp-content/uploads/sites/2/rezume-free-template-353x278.jpg.avif';--}}
+{{--                                }--}}
+{{--                            @endphp--}}
+
+{{--                            <article class="theme-card">--}}
+{{--                                <div class="theme-thumb">--}}
+{{--                                    <img src="{{ $previewUrl }}" alt="{{ $theme->name }}">--}}
+{{--                                    <div class="theme-overlay-bar">--}}
+{{--                                        <div class="theme-pill">Live preview</div>--}}
+{{--                                        <div class="theme-pill theme-pill-highlight">PDF friendly</div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="theme-body">--}}
+{{--                                    <div class="theme-name-row">--}}
+{{--                                        <div class="theme-name">{{ $theme->name }}</div>--}}
+{{--                                        <div class="theme-tag">Portfolio theme</div>--}}
+{{--                                    </div>--}}
+{{--                                    <p class="theme-desc">--}}
+{{--                                        {{ $theme->description ?? 'A beautiful portfolio layout designed for modern students and professionals.' }}--}}
+{{--                                    </p>--}}
+{{--                                    <div class="theme-actions">--}}
+{{--                                        <a href="{{ route('preview.theme', $theme->id) }}" target="_blank" class="btn-tiny">--}}
+{{--                                            Preview--}}
+{{--                                        </a>--}}
+
+{{--                                        @auth--}}
+{{--                                            <form method="GET" action="{{ route('select.theme', $theme->id) }}" style="flex:1;">--}}
+{{--                                                @csrf--}}
+{{--                                                <button type="submit" class="btn-tiny btn-tiny-primary">--}}
+{{--                                                    Use this theme--}}
+{{--                                                </button>--}}
+{{--                                            </form>--}}
+{{--                                        @else--}}
+{{--                                            <a href="{{ route('select.theme', $theme->id) }}" class="btn-tiny btn-tiny-primary">--}}
+{{--                                                Get started--}}
+{{--                                            </a>--}}
+{{--                                        @endauth--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </article>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </section>--}}
+{{--    @endif--}}
+
+{{--    <!-- ABOUT -->--}}
+{{--    <section id="about" class="section">--}}
+{{--        <div class="section-inner">--}}
+{{--            <div class="section-header" style="text-align:left;margin-bottom:18px;">--}}
+{{--                <h2 class="section-title">About <span>Portfolio Builder</span></h2>--}}
+{{--            </div>--}}
+
+{{--            <div class="about-grid">--}}
+{{--                <div class="about-text">--}}
+{{--                    <p>--}}
+{{--                        Portfolio Builder un logon ke liye hai jo apna portfolio professional banana chahte hain,--}}
+{{--                        lekin developer hire karne ya Figma, HTML, CSS seekhne ka time nahi hai.--}}
+{{--                    </p>--}}
+{{--                    <p>--}}
+{{--                        Ham aapko <strong>completely free</strong> me portfolio website dete hain. Aap sirf:--}}
+{{--                        <strong>template choose</strong> karte ho, <strong>login karke data fill</strong> karte ho,--}}
+{{--                        baaki hamara system automatically ek clean portfolio bana deta hai.--}}
+{{--                    </p>--}}
+{{--                    <p>--}}
+{{--                        Aur jab bhi aapko CV bhejna ho, job ke liye apply karna ho ya LinkedIn pe profile strong dikhani ho,--}}
+{{--                        aap same portfolio ka <strong>live link</strong> bhi share kar sakte ho--}}
+{{--                        aur <strong>downloadable PDF</strong> bhi.--}}
+{{--                    </p>--}}
+
+{{--                    <div class="about-chips">--}}
+{{--                        <div class="about-chip">Free forever</div>--}}
+{{--                        <div class="about-chip">No coding</div>--}}
+{{--                        <div class="about-chip">PDF export</div>--}}
+{{--                        <div class="about-chip">Theme switch anytime</div>--}}
+{{--                        <div class="about-chip">Mobile friendly</div>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="about-highlights">--}}
+{{--                        <div class="about-card">--}}
+{{--                            <div class="about-card-title">Free forever</div>--}}
+{{--                            <div class="about-card-text">--}}
+{{--                                Koi hidden payment nahi. Jab chaho login karo, profile update karo, aur naya PDF nikal lo.--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="about-card">--}}
+{{--                            <div class="about-card-title">Template driven</div>--}}
+{{--                            <div class="about-card-text">--}}
+{{--                                Alag-alag layouts aapko ek hi content se multiple looks try karne ka option dete hain.--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="about-card">--}}
+{{--                            <div class="about-card-title">Perfect for job hunt</div>--}}
+{{--                            <div class="about-card-text">--}}
+{{--                                HR ko ek clean link ya PDF bhejo – portfolio se pehle se strong impression banta hai.--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+{{--                <aside class="about-side">--}}
+{{--                    <div class="about-side-title">Why people like using it</div>--}}
+{{--                    <ul class="about-list">--}}
+{{--                        <li>--}}
+{{--                            <span class="about-dot"></span>--}}
+{{--                            <span>No complicated settings – sirf straightforward steps, beginner friendly.</span>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <span class="about-dot"></span>--}}
+{{--                            <span>Har device pe readable typography aur clean spacing.</span>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <span class="about-dot"></span>--}}
+{{--                            <span>Portfolio update karte hi naya PDF bana sakte ho – CV ke saath hamesha fresh info.</span>--}}
+{{--                        </li>--}}
+{{--                        <li>--}}
+{{--                            <span class="about-dot"></span>--}}
+{{--                            <span>Freelancing gigs, internships, full-time jobs – ek hi link sab ke kaam aa jata hai.</span>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+
+{{--                    @guest--}}
+{{--                        <a href="{{ route('register') }}" class="btn-pill btn-primary" style="width:100%;justify-content:center;margin-top:4px;">--}}
+{{--                            Start your free portfolio--}}
+{{--                        </a>--}}
+{{--                    @endguest--}}
+{{--                </aside>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+
+{{--    <!-- FOOTER -->--}}
+{{--    <footer class="footer">--}}
+{{--        <div class="footer-inner">--}}
+{{--            <span>&copy; {{ date('Y') }} Portfolio Builder.</span>--}}
+{{--            <span>Build once, share everywhere — web + PDF, always free.</span>--}}
+{{--        </div>--}}
+{{--    </footer>--}}
+{{--</div>--}}
+{{--</body>--}}
+{{--</html>--}}
